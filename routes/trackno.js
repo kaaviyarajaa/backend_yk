@@ -1,24 +1,17 @@
 import express from "express";
+import { Acccreate, Accdelete, Accupdate, TrackIndex } from "../controllers/trackno.controller.js";
 
 
 const router=express.Router();
 
 
 // crud functions
-router.get("/", (req,res) => {
-  res.send("Get all mobile numbers");
-});
+router.get("/",TrackIndex);
 
-router.post("/", (req,res) => {
-   res.send("Create an account");
-});
+router.post("/",Acccreate);
 
-router.put("/:id", (req,res) =>{
-   res.send("Update the details");
-});
+router.put("/:id",Accupdate);
 
-router.delete("/:id",(req,res) => {
-    res.send("Delete the phone number");
-});
+router.delete("/:id",Accdelete);
 
 export default router;
